@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 
+  name: MyString
+  label: MyString
+  popularity: 
+  release_date: MyString
+
+two:
+  id: 
+  name: MyString
+  label: MyString
+  popularity: 
+  release_date: MyString
