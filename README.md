@@ -1,4 +1,4 @@
-# welcome to Spotify webapp
+# Welcome to Spotify webapp
 
 ## Resources
 
