@@ -1,7 +1,7 @@
 require 'rest-client'
 require 'json'
 
-ACCESS_TOKEN = 'BQBd_6ddCchJmz5J7a-cVeZpDNn8kIi7iJT0lihrRz94mRDgw7eHCe2nOQ6-FuTR6-OOWAEfRvuj7-tVR-7k6XhtQHYDHvxWTYqvf4VXBfknnzAZ93gbI_k5DnpWs1Eo_58871c8UpDafJinivwnSvk7IEJo8-ujlydmnAgHdtdSINo'.freeze
+ACCESS_TOKEN = 'BQAkJZa4HODbmk6zco6JuL4__grv5Hfg0ceIQZBhpbTXUahNMY48PsEjHZrGvRYb8H1ryuKmKo6HwSxC6yCABPmF0DA04JWQug2fBC7p8S24Fkztk2-GC6RclM-K_zQ4pIAPcC0GtGpHqxKOI057Fpb6xjZ-um6J3h0y-nQJOOk25D0'.freeze
 
 def add_artists(track)
   track['artists']&.each do |artist|
