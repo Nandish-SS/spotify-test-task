@@ -13,19 +13,19 @@ class FetchData
   def self.filter_tracks(track_labels)
     return tracks if track_labels.nil?
 
-    tracks.where("tracks.name in (#{track_labels.join(',')})")
+    tracks.where("tracks.name in ('#{track_labels}')")
   end
 
   def self.filter_albums(album_labels)
     return tracks if album_labels.nil?
 
-    tracks.joins(:album).where("albums.name in (#{album_labels.join(',')})")
+    tracks.joins(:album).where("albums.name in ('#{album_labels}')")
   end
 
   def self.filter_artists(artist_labels)
     return tracks if artist_labels.nil?
 
-    tracks.joins(:artists).where("artists.name in ('#{artist_labels.join(',')}')")
+    tracks.joins(:artists).where("artists.name in ('#{artist_labels}')")
   end
 
   def self.filter_year(year)

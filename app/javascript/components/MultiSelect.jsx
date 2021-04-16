@@ -8,6 +8,7 @@ import {
   MenuItem,
   Select,
 } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -20,28 +21,44 @@ const MenuProps = {
   },
 };
 
+const useStyles = makeStyles(() => ({
+  inputLabel: {
+    color: "white",
+    fontSize: "12px",
+  },
+  inputField: {
+    width: 180,
+    marginTop: 10,
+    marginLeft: 1,
+    color: "white",
+    fontSize: "13px",
+    borderBottom: "1px solid #fff",
+  },
+}));
+
 export default function MultiSelect({
   filterField,
   items,
   selectedValues,
   setSelectedValues,
 }) {
+  const classes = useStyles();
+
   function handleChange(event) {
     setSelectedValues(event.target.value);
   }
 
   return (
     <Fragment>
-      <InputLabel>{filterField}</InputLabel>
+      <InputLabel className={classes.inputLabel}>{filterField}</InputLabel>
       {items && (
         <Select
           displayEmpty
-          input={<Input />}
+          input={<Input className={classes.inputField} />}
           labelId={filterField}
           MenuProps={MenuProps}
-          multiple
           onChange={handleChange}
-          renderValue={(selected) => selected.join(", ") || "All"}
+          renderValue={(selected) => selected || "All"}
           value={selectedValues}
         >
           {items.map((item, index) => (

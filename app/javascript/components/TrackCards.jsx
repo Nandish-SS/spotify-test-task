@@ -22,10 +22,6 @@ const useStyles = makeStyles((theme) => ({
   grid: {
     margin: 10,
   },
-  details: {
-    display: "flex",
-    flexDirection: "column",
-  },
   trackContent: {
     width: "30%",
     margin: "auto",
@@ -49,11 +45,18 @@ const useStyles = makeStyles((theme) => ({
     height: 38,
     width: 38,
   },
-  // trackLabel: {
-  //   width: 300,
-  // },
   albumLabel: {
     fontSize: "15px",
+  },
+  inputLabel: {
+    color: "white",
+    fontSize: "25px",
+    margin: "auto",
+    height: 500,
+    marginTop: 100,
+  },
+  slider: {
+    color: "#2dd760",
   },
 }));
 
@@ -63,40 +66,45 @@ export default function TrackCards({ filteredTracks }) {
   return (
     <Fragment>
       <Grid container>
-        {filteredTracks.map((track, index) => (
-          <Grid key={index} className={classes.grid} item xs={12}>
-            <Card className={classes.root}>
-              <CardMedia
-                className={classes.cover}
-                image={track.image}
-                title={`${track.album_name} Cover`}
-              />
-              {/* <div className={classes.details}> */}
-              <CardContent className={classes.trackContent}>
-                <Typography component="h6" variant="h6">
-                  {track.name}
-                </Typography>
-              </CardContent>
-              <CardContent className={classes.albumContent}>
-                <Typography
-                  className={classes.albumLabel}
-                  color="textSecondary"
-                  component="h5"
-                  variant="h5"
-                >
-                  {track.album_name}
-                </Typography>
-              </CardContent>
-              <div className={classes.controls}>
-                <IconButton aria-label="play/pause">
-                  <PlayArrowIcon className={classes.playIcon} />
-                </IconButton>
-                <Slider aria-labelledby="continuous-slider" />
-              </div>
-              {/* </div> */}
-            </Card>
-          </Grid>
-        ))}
+        {filteredTracks.length > 0 ? (
+          filteredTracks.map((track, index) => (
+            <Grid key={index} className={classes.grid} item xs={12}>
+              <Card className={classes.root}>
+                <CardMedia
+                  className={classes.cover}
+                  image={track.image}
+                  title={`${track.album_name} Cover`}
+                />
+                <CardContent className={classes.trackContent}>
+                  <Typography component="h6" variant="h6">
+                    {track.name}
+                  </Typography>
+                </CardContent>
+                <CardContent className={classes.albumContent}>
+                  <Typography
+                    className={classes.albumLabel}
+                    color="textSecondary"
+                    component="h5"
+                    variant="h5"
+                  >
+                    {track.album_name}
+                  </Typography>
+                </CardContent>
+                <div className={classes.controls}>
+                  <IconButton aria-label="play/pause">
+                    <PlayArrowIcon className={classes.playIcon} />
+                  </IconButton>
+                  <Slider
+                    className={classes.slider}
+                    aria-labelledby="continuous-slider"
+                  />
+                </div>
+              </Card>
+            </Grid>
+          ))
+        ) : (
+          <div className={classes.inputLabel}>No Tracks Found</div>
+        )}
       </Grid>
     </Fragment>
   );
