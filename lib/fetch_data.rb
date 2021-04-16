@@ -25,13 +25,13 @@ class FetchData
   def self.filter_artists(artist_labels)
     return tracks if artist_labels.nil?
 
-    tracks.joins(:artists).where("artists.name in (#{artist_labels.join(',')})")
+    tracks.joins(:artists).where("artists.name in ('#{artist_labels.join(',')}')")
   end
 
   def self.filter_year(year)
     return tracks if year.nil?
 
-    tracks.joins(:album).where("SUBSTRING(albums.release_date, 1, 4) >= #{year}")
+    tracks.joins(:album).where("SUBSTRING(albums.release_date, 1, 4) >= '#{year}'")
   end
 
   def self.filter_popularity(popularity)
