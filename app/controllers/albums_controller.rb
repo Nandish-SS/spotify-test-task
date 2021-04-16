@@ -1,5 +1,9 @@
 class AlbumsController < ApplicationController
   def all_albums
-    render json: Album.all
+    albums = Album.all&.map do |album|
+      album.name
+    end
+
+    render json: albums
   end
 end

@@ -4,8 +4,8 @@ class ChangeTypeFormatOfId < ActiveRecord::Migration[5.2]
     change_column :tracks, :id, :string
     change_column :tracks, :album_id, :string
     change_column :artists, :id, :string
-    change_column :artist_and_tracks, :artist_id, :string
-    change_column :artist_and_tracks, :track_id, :string
+    change_column :artists_tracks, :artist_id, :string
+    change_column :artists_tracks, :track_id, :string
   end
 
   def down
@@ -13,7 +13,7 @@ class ChangeTypeFormatOfId < ActiveRecord::Migration[5.2]
     change_column :tracks, :id, :integer
     change_column :tracks, :album_id, :integer
     change_column :artists, :id, :integer
-    change_column :artist_and_tracks, :artist_id, :integer
-    change_column :artist_and_tracks, :track_id, :integer
+    change_column :artists_tracks, :artist_id, :integer
+    change_column :artists_tracks, :track_id, :integer
   end
 end

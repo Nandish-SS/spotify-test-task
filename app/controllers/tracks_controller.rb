@@ -1,5 +1,9 @@
 class TracksController < ApplicationController
   def all_tracks
-    render json: Track.all
+    tracks = Track.all&.map do |track|
+      track.name
+    end
+
+    render json: tracks
   end
 end

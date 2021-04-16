@@ -1,5 +1,9 @@
 class ArtistsController < ApplicationController
-  def all_tracks
-    render json: Artist.all
+  def all_artists
+    artists = Artist.all&.map do |artist|
+      artist.name
+    end
+
+    render json: artists
   end
 end

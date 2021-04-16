@@ -1,2 +1,0 @@
-class ArtistAndTrack < ApplicationRecord
-end

@@ -25,7 +25,7 @@ class FetchData
   def self.filter_artists(artist_labels)
     return tracks if artist_labels.nil?
 
-    tracks.joins(artist_track_joins: :artist).where("artists.name in (#{artist_labels.join(',')})")
+    tracks.joins(:artists).where("artists.name in (#{artist_labels.join(',')})")
   end
 
   def self.filter_year(year)

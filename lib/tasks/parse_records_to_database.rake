@@ -1,13 +1,13 @@
 require 'rest-client'
 require 'json'
 
-ACCESS_TOKEN = 'BQANYzD4jtsKLuPFqWiq80FdjFnlsIw_C-pi-UDpLAT6ChDvphqvAH6Ywoav3L5jIIqTYQX935hQMziboYVvGJQ_2DgTbQWcg31mFDHIfHzkhrsaKotxjHF63DIqZqEMxQDyWTxtBAzZM9GQlSXEkm_G_2U26mJgJhHvC88LhkfdqcY'.freeze
+ACCESS_TOKEN = 'BQBd_6ddCchJmz5J7a-cVeZpDNn8kIi7iJT0lihrRz94mRDgw7eHCe2nOQ6-FuTR6-OOWAEfRvuj7-tVR-7k6XhtQHYDHvxWTYqvf4VXBfknnzAZ93gbI_k5DnpWs1Eo_58871c8UpDafJinivwnSvk7IEJo8-ujlydmnAgHdtdSINo'.freeze
 
 def add_artists(track)
   track['artists']&.each do |artist|
     Artist.create(id: artist['id'], name: artist['name']) if Artist.find_by(id: artist['id']).nil?
 
-    ArtistAndTrack.create(artist_id: artist['id'], track_id: track['id'])
+    ArtistsTrack.create(artist_id: artist['id'], track_id: track['id'])
   end
 end
 
@@ -18,7 +18,9 @@ def add_tracks(album)
     Track.create(
       id: track['id'],
       name: track['name'],
-      album_id: album['id']
+      album_id: album['id'],
+      album_name: album['name'],
+      image: album['images'][0]['url']
     )
 
     add_artists(track)
