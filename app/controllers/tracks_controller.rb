@@ -1,5 +1,5 @@
 class TracksController < ApplicationController
-  def all_tracks
+  def index
     tracks = Track.all&.map do |track|
       track.name
     end

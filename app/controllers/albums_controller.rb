@@ -1,5 +1,5 @@
 class AlbumsController < ApplicationController
-  def all_albums
+  def index
     albums = Album.all&.map do |album|
       album.name
     end

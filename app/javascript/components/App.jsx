@@ -23,7 +23,7 @@ function App() {
   const [artists] = useCustomFetch("/artists");
 
   const [filteredTracks] = useCustomFetch(
-    `api/get_tracks?${uriEncodeObject({
+    `filters?${uriEncodeObject({
       albums: selectedAlbums,
       tracks: selectedTracks,
       artists: selectedArtists,

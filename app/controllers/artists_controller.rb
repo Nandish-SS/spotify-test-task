@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-  def all_artists
+  def index
     artists = Artist.all&.map do |artist|
       artist.name
     end
