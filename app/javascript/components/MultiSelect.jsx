@@ -25,6 +25,7 @@ const useStyles = makeStyles(() => ({
   inputLabel: {
     color: "white",
     fontSize: "12px",
+    fontFamily: "Poppins",
   },
   inputField: {
     width: 180,

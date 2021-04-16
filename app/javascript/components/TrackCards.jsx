@@ -47,12 +47,17 @@ const useStyles = makeStyles((theme) => ({
   },
   albumLabel: {
     fontSize: "15px",
+    fontFamily: "Poppins",
+  },
+  trackLabel: {
+    fontFamily: "Poppins",
   },
   inputLabel: {
     color: "white",
     fontSize: "25px",
     margin: "auto",
     height: 500,
+    fontFamily: "Poppins",
     marginTop: 100,
   },
   slider: {
@@ -76,7 +81,11 @@ export default function TrackCards({ filteredTracks }) {
                   title={`${track.album_name} Cover`}
                 />
                 <CardContent className={classes.trackContent}>
-                  <Typography component="h6" variant="h6">
+                  <Typography
+                    className={classes.trackLabel}
+                    component="h6"
+                    variant="h6"
+                  >
                     {track.name}
                   </Typography>
                 </CardContent>

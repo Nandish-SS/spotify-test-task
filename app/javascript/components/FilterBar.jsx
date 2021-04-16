@@ -12,6 +12,7 @@ const useStyles = makeStyles(() => ({
   inputLabel: {
     color: "white",
     fontSize: "13px",
+    fontFamily: "Poppins",
   },
   grid: {
     margin: "auto",
@@ -26,6 +27,7 @@ const useStyles = makeStyles(() => ({
   },
   buttonLabel: {
     fontWeight: 600,
+    fontFamily: "Poppins",
   },
   textField: {
     marginTop: 7,

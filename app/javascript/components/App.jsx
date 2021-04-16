@@ -35,6 +35,7 @@ function App() {
   useEffect(() => {
     document.body.style.backgroundColor = "black";
     document.body.style.padding = "0px 20px 20px 20px";
+    document.body.style.fontFamily = "Poppins"
   }, []);
 
   return (
