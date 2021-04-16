@@ -34,6 +34,9 @@ const useStyles = makeStyles(() => ({
     fontSize: "13px",
     borderBottom: "1px solid #fff",
   },
+  icon: {
+    color: "white",
+  }
 }));
 
 export default function MultiSelect({
@@ -53,6 +56,7 @@ export default function MultiSelect({
       <InputLabel className={classes.inputLabel}>{filterField}</InputLabel>
       {items && (
         <Select
+          classes={{ icon: classes.icon }}
           displayEmpty
           input={<Input className={classes.inputField} />}
           labelId={filterField}
