@@ -20,5 +20,5 @@ The app runs on the platform consisting of these:
     bin/rake db:migrate
     
     rake task to update db
-    bin/rake parse_records_to_database (update Spotify ACCESS_TOKEN to parse_records_to_database.take file to get the tracks from spotify)
+    bin/rake parse_records_to_database (update Spotify ACCESS_TOKEN to parse_records_to_database.rake file to get the tracks from spotify)
     
