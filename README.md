@@ -1,4 +1,4 @@
-# welcome to cardinalhire jobs marketplace webapp
+# welcome to Spotify webapp
 
 ## Resources
 
